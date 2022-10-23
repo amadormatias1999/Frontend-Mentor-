@@ -1,0 +1,178 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+:root
+{
+    --fuenteprimaria:'Montserrat', sans-serif;
+
+    --funentesecundaria:'Fraunces', serif;
+}
+
+/* Global elements */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;}
+body
+{
+    background-color: hsl(36, 65%, 95%);
+    font-size : 14px}
+    
+
+
+h1
+{
+    font-family: var(--funentesecundaria);
+}
+span
+{
+    font-family: var(--fuenteprimaria);
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: gray;
+}
+ 
+img
+{
+    width: 100%;
+    height:100%;
+    border-radius: 1.5rem 0  0  1.5rem; 
+}
+
+/* Main */
+
+
+.contenedor
+{
+    max-width: 70rem;
+    margin:  auto;
+}
+
+.caja-producto
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20rem 0;
+    border-radius: 1.5rem;
+}
+
+.producto-info
+{
+    background-color: white;
+    border-radius: 0 1.5rem 1.5rem 0;
+    padding: 3.5rem;
+}
+
+@media (max-width: 480px) { 
+    .contenedor
+    {
+        margin: 2rem;
+    
+    }
+    .caja-producto
+    {
+        grid-template-rows: 0.2fr 1fr;
+
+    }
+    .producto-img
+    {
+        grid-column: 1/ 3;
+        height: 335px;
+    
+    }
+    img {
+        object-fit: cover;
+        border-radius: 1.5rem 1.5rem 0 0;
+        
+    }
+
+    .producto-info
+    {
+        grid-column: -3 /-1 ;
+        margin-bottom: auto;
+        border-radius: 0 0 1.5rem 1.5rem;
+        padding: 2.5rem;
+
+    }
+}
+
+
+/* Parrafos  */
+
+.parrafo
+{
+    font-family: var(--fuenteprimaria);
+    line-height: 2.5rem;
+    color: gray;
+    font-size: 1.5rem;
+    
+
+}
+
+/* Numeros */
+
+.numeros
+{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.numeros p:first-of-type
+{
+    color:   hsl(158, 36%, 37%);
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: var(--funentesecundaria);
+}
+
+
+
+.numeros p:last-of-type
+{
+    text-decoration: line-through;
+    font-size: 1.4rem;
+    font-family: var(--fuenteprimaria);
+    color: gray;
+}
+
+/* Boton */
+
+.boton-carrito
+{
+    background-color:  hsl(158, 36%, 37%);
+    text-align: center;
+    font-family: var(--fuenteprimaria);
+    border-radius: 1rem;
+    
+}
+input
+{
+    text-decoration: none;
+    outline:none;
+    border: none;
+    background-color: transparent;
+    color: white;
+  
+
+}
+
+.boton 
+{
+    font-size: 1.8rem;
+    font-family: var(--fuenteprimaria);
+    background-color:  hsl(158, 36%, 37%);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+
+}
+.boton:hover
+{
+    cursor: pointer;
+    background-color: #122f12;
+}
+
+
