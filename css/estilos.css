@@ -1,178 +1,186 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-
 :root
 {
-    --fuenteprimaria:'Montserrat', sans-serif;
 
-    --funentesecundaria:'Fraunces', serif;
+--Verydarkblue: hsl(233, 47%, 7%);
+--Darkdesaturatedblue: hsl(244, 38%, 16%);
+--Softviolet: hsl(277, 64%, 61%);
+
+--White: hsl(0, 0%, 100%);
+--Slightlytransparentwhite: hsla(0, 0%, 100%, 0.75);
+--Slightlytransparentwhite: hsla(0, 0%, 100%, 0.6);
+
+--fuente1: 'EB Garamond', serif;
+--fuente2:  'Lexend Deca', sans-serif;
+
 }
-
 /* Global elements */
 
 html {
-    font-size: 62.5%;
     box-sizing: border-box;
-    scroll-snap-type: y mandatory;}
-body
-{
-    background-color: hsl(36, 65%, 95%);
-    font-size : 14px}
-    
+    background-color: var(--Verydarkblue);
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
+body 
+{
+  
+    font-size: 15px;
+}
 
 h1
 {
-    font-family: var(--funentesecundaria);
+  font-family: var(--fuente2);
+  font-weight: 700;
+  color: var(--White)
 }
 span
 {
-    font-family: var(--fuenteprimaria);
-    font-weight: 100;
-    text-transform: uppercase;
-    letter-spacing: .5rem;
-    color: gray;
+  color: var(--Softviolet);
 }
- 
-img
+
+p
 {
-    width: 100%;
-    height:100%;
-    border-radius: 1.5rem 0  0  1.5rem; 
+  font-family: var(--fuente2);
+  font-weight: 100;
+  color: var(--Slightlytransparentwhite);
+  line-height: 2.5rem;
 }
 
-/* Main */
-
-
-.contenedor
+img 
 {
-    max-width: 70rem;
-    margin:  auto;
+ display: block;
+  width: 100%;
+  height: auto;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
-
-.caja-producto
+  @media (max-width:375px) { 
+img 
 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 20rem 0;
-    border-radius: 1.5rem;
-}
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 0;
 
-.producto-info
+}
+      
+  }
+
+
+/* Contenedor */
+
+
+.contenedor 
 {
-    background-color: white;
-    border-radius: 0 1.5rem 1.5rem 0;
-    padding: 3.5rem;
+    max-width: 100rem;
+    margin: 20rem auto;
 }
+@media (max-width: 375px) { 
+  .contenedor{
+    margin: 20rem 1.5rem;
 
-@media (max-width: 480px) { 
-    .contenedor
-    {
-        margin: 2rem;
+  }
     
-    }
-    .caja-producto
-    {
-        grid-template-rows: 0.2fr 1fr;
-
-    }
-    .producto-img
-    {
-        grid-column: 1/ 3;
-        height: 335px;
-    
-    }
-    img {
-        object-fit: cover;
-        border-radius: 1.5rem 1.5rem 0 0;
-        
-    }
-
-    .producto-info
-    {
-        grid-column: -3 /-1 ;
-        margin-bottom: auto;
-        border-radius: 0 0 1.5rem 1.5rem;
-        padding: 2.5rem;
-
-    }
 }
 
 
-/* Parrafos  */
-
-.parrafo
+/* Media queryes */
+.servicio 
 {
-    font-family: var(--fuenteprimaria);
-    line-height: 2.5rem;
-    color: gray;
-    font-size: 1.5rem;
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--Darkdesaturatedblue);
+}
+.servicio
+{
+  border-radius: 1rem;
+}
+
+.servicio-info
+{
+  grid-row: 2/3;
+  margin: 0 1.5rem;
+  text-align: center;
+  
+}
+
+
+@media (min-width: 375px) { 
+  .servicio 
+  {
+      display: grid;
+      grid-template-columns: repeat(2 ,1fr);
+  } 
+
+  /* //Aca se puede aplicar inherit o auto */
+  .servicio-info
+  {
+   grid-row: inherit; 
+   text-align:left;
+
+   margin: 0rem 7rem 2rem 6rem;
+  }
+
+  .servicio-numeros
+  {
+    display: flex;
+    justify-content:flex-start;
+    gap: 5rem;
+    font-weight: bold;
     
+  }
+
 
 }
 
-/* Numeros */
+/* Color a la imagen */
 
 .numeros
 {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  color: var(--White);
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.servicio__palabras
+{
+  color: var(--Slightlytransparentwhite);
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
-.numeros p:first-of-type
+/* Servicios */
+
+
+.servicio-img 
 {
-    color:   hsl(158, 36%, 37%);
-    font-size: 3.5rem;
-    font-weight: bold;
-    font-family: var(--funentesecundaria);
+  position: relative;
+ 
+  overflow: hidden;
 }
 
 
 
-.numeros p:last-of-type
+.servicio-overlay
 {
-    text-decoration: line-through;
-    font-size: 1.4rem;
-    font-family: var(--fuenteprimaria);
-    color: gray;
+  position: absolute;
+  background: #801da5;
+  background: linear-gradient(90deg, hwb(284 2% 51% / 0.535) 100%, rgba(29,0,255,1) 100%);
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
-
-/* Boton */
-
-.boton-carrito
-{
-    background-color:  hsl(158, 36%, 37%);
-    text-align: center;
-    font-family: var(--fuenteprimaria);
-    border-radius: 1rem;
+@media (min-width: 375px) { 
+    .servicio-overlay {
+      border-bottom-left-radius: 0 ;
+      border-top-left-radius: 0;
     
+    }
 }
-input
-{
-    text-decoration: none;
-    outline:none;
-    border: none;
-    background-color: transparent;
-    color: white;
+
+
   
-
-}
-
-.boton 
-{
-    font-size: 1.8rem;
-    font-family: var(--fuenteprimaria);
-    background-color:  hsl(158, 36%, 37%);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    text-align: center;
-
-}
-.boton:hover
-{
-    cursor: pointer;
-    background-color: #122f12;
-}
-
-
